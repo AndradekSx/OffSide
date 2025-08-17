@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OffSide</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+ <header>
+  <div class="logo">
+    <a href="index.html"><img src="home_img/logo2.png" id="img_logo" alt="OffSide"></a>
+  </div>
+
+  <nav class="main-nav">
+    <!-- PRODUTOS: abre painel só com CSS -->
+    <div class="dropdown">
+      <!-- anchor sem href para não navegar; tabindex permite foco/click -->
+      <a class="nav-link dropdown__toggle" tabindex="0" role="button">PRODUTOS</a>
+
+      <div class="dropdown__panel" aria-label="Atalhos de produtos">
+        <a class="panel-link" href="syna.html">Syna World</a>
+        <a class="panel-link" href="corteiz.html">Corteiz</a>
+        <a class="panel-link" href="tech.html">Nike Tech</a>
+        <a class="panel-link" href="todos.html">Ver Todos</a>
+      </div>
+    </div>
+
+    <!-- demais links -->
+    <a class="nav-link" href="quem.html">QUEM SOMOS</a>
+    <a class="nav-link" href="contato.html">CONTATO</a>
+    <a class="nav-link" href="cadastro.html">CADASTRO</a>
+    <a class="nav-link" href="carrinho.html">CARRINHO</a>
+  </nav>
+
+  <form class="search-bar" action="#" method="get">
+    <input type="text" name="search" placeholder="Pesquisar...">
+  </form>
+</header>
+  
+  <div class="imagens">
+    <div class="colecao">
+      <div class="imagem-container">
+        <img src="home_img/coleãosyna.png" id="colecaosyna">
+        <p class="texto-sobre-imagem" id="texto_syna">COLEÇÃO <span class="colorido">SYNA WORLD</span></p>
+        <a href="syna.html" class="botao-colecao">VER COLEÇÃO</a>
+      </div>
+    </div>
+    
+    <div class="colecao">
+      <div class="imagem-container">
+        <img src="home_img/cortez.jpeg" id="colecaocortez">
+        <p class="texto-sobre-imagem" id="texto_cortez">COLEÇÃO <span class="colorido">CORTEZ</span></p>
+        <a href="corteiz.html" class="botao-colecao">DESCUBRA</a>
+      </div>
+    </div>
+    
+    <div class="colecao">
+      <div class="imagem-container">
+        <img src="home_img/nike tech.jpeg" id="colecaotech">
+        <p class="texto-sobre-imagem" id="texto_tech">COLEÇÃO <span class="colorido">NIKE TECH</span></p>
+        <a href="tech.html" class="botao-colecao">GARANTA O SEU</a>
+      </div>
+    </div>
+  <div class="atitude">
+        <p><span id="azul"><b>VISTA ATITUDE</b></span><b>-</b><span id="laranja"><b>VISTA OFFSIDE</b></span></p>
+  </div>
+  <footer class="footer">
+    <p>COPYRIGHT THEO ANDRADE - OFFSIDE <br>2025. TODOS OS DIREITOS RESERVADOS.</p>
+  </footer>
+</body>
+</html>

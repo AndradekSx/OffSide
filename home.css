@@ -1,0 +1,249 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* altura mínima da tela */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    justify-content: space-between;
+}
+
+/* HEADER */
+header {
+  background-color: #4a6b7c;
+  color: white;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #f4662c;
+}
+
+#img_logo {
+  width: 150px;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.5s;
+  transition: 0.5s;
+}
+
+nav a:hover {
+  color: #f4662c;
+  transition: 0.5s;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+  flex: 1; /* empurra o footer pra baixo */
+}
+
+.imagens {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.colecao {
+  display: flex;
+  flex-direction: column;
+}
+
+.colecao img {
+  width: 250px;
+  object-fit: contain;
+}
+
+#colecaosyna { width: 408px; }
+#colecaocortez { width: 444px; }
+#colecaotech { width: 400px; }
+
+.colorido {
+  color: #4FC9FF;
+}
+
+.imagem-container {
+  position: relative;
+  display: inline-block;
+}
+
+.texto-sobre-imagem {
+  color: #f4662c !important;
+}
+
+#texto_syna,
+#texto_cortez,
+#texto_tech {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: 800;
+  font-size: 28px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.botao-colecao {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 10px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.botao-colecao:hover {
+  background-color: #f4662c;
+  color: white;
+}
+
+.atitude {
+  text-align: center;
+  font-size: 60px;
+}
+
+#azul { color: #4FC9FF; }
+#laranja { color: #f4662c; }
+
+/* FOOTER */
+.footer {
+  background-color: #e5e8ea;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 20px 50px;
+  line-height: 1.5;
+  width: 150%;
+  margin: 0;
+}
+
+/* ===== Dropdown simples (sem JS) ===== */
+.main-nav { display: flex; gap: 30px; align-items: center; position: relative; }
+
+/* container do dropdown */
+.dropdown { position: relative; }
+
+/* painel escondido por padrão */
+.dropdown__panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -6px;
+  width: 260px;
+  background: #fff;
+  color: #111;
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.18);
+  padding: 10px;
+  z-index: 1000;
+
+  /* estado fechado */
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+/* abre no hover e quando o link recebe foco (click/tab) */
+.dropdown:hover .dropdown__panel,
+.dropdown:focus-within .dropdown__panel {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* setinha no topo do painel */
+.dropdown__panel::before {
+  content: "";
+  position: absolute;
+  top: -8px; left: 20px;
+  width: 16px; height: 16px;
+  background: #fff;
+  transform: rotate(45deg);
+  box-shadow: -3px -3px 6px rgba(0,0,0,.04);
+}
+
+/* links dentro do painel (os "quadrados") */
+.panel-link {
+  display: block;
+  background: #f7f9fb;
+  border: 1px solid #e3e8ee;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 8px 4px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+  transition: background .15s, border-color .15s, transform .05s;
+}
+.panel-link:hover {
+  background: #eef3f7;
+  border-color: #d7dde1;
+  transform: translateY(-1px);
+}
+
+/* deixa o "PRODUTOS" com cara de link/btn */
+.dropdown__toggle { cursor: pointer; }
+
+/* opcional: destaca o item quando painel aberto */
+.dropdown:hover > .dropdown__toggle,
+.dropdown:focus-within > .dropdown__toggle {
+  color: #f4662c;
+}
+
+/* mobile: painel ocupa a largura do header */
+@media (max-width: 780px) {
+  .dropdown__panel {
+    left: -40px; right: -40px; width: auto;
+    border-radius: 0 0 12px 12px;
+  }
+  .dropdown__panel::before { left: 54px; }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contato.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+  <div class="logo">
+    <a href="index.html"><img src="home_img/logo2.png" id="img_logo" alt="OffSide"></a>
+  </div>
+
+  <nav class="main-nav">
+    <!-- PRODUTOS: abre painel só com CSS -->
+    <div class="dropdown">
+      <!-- anchor sem href para não navegar; tabindex permite foco/click -->
+      <a class="nav-link dropdown__toggle" tabindex="0" role="button">PRODUTOS</a>
+
+      <div class="dropdown__panel" aria-label="Atalhos de produtos">
+        <a class="panel-link" href="syna.html">Syna World</a>
+        <a class="panel-link" href="corteiz.html">Corteiz</a>
+        <a class="panel-link" href="tech.html">Nike Tech</a>
+        <a class="panel-link" href="todos.html">Ver Todos</a>
+      </div>
+    </div>
+
+    <!-- demais links -->
+    <a class="nav-link" href="quem.html">QUEM SOMOS</a>
+    <a class="nav-link" href="contato.html">CONTATO</a>
+    <a class="nav-link" href="cadastro.html">CADASTRO</a>
+    <a class="nav-link" href="carrinho.html">CARRINHO</a>
+  </nav>
+
+  <form class="search-bar" action="#" method="get">
+    <input type="text" name="search" placeholder="Pesquisar...">
+  </form>
+</header>
+        <section id="formulario-contato">
+            <div class="texto-contato">
+                <p id="fale">FALE COM A OFFSIDE</p>
+                <p id="duvida">Dúvida, sugestão ou só quer trocar uma ideia? <br> 
+                Preencha o formulário que já já te respondemos!</p>
+            </div>
+        
+            <form class="form-contato" action="#" method="post">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="tel" name="telefone" placeholder="Telefone" required>
+                <textarea name="mensagem" placeholder="Mensagem" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        
+
+      <footer class="footer">
+        <p>COPYRIGHT THEO ANDRADE - OFFSIDE <br>2025. TODOS OS DIREITOS RESERVADOS.</p>
+      </footer>
+</body>
+</html>

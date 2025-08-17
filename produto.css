@@ -1,0 +1,322 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* HEADER */
+header {
+    background-color: #4a6b7c;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+
+#img_logo {
+    width: 150px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+nav a:hover {
+    color: #f4662c;
+}
+
+#selecionado {
+    color: #f4662c;
+}
+
+.search-bar input {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+/* ====== Página de produto ====== */
+main.product { 
+  flex: 1;
+  max-width: 1200px;
+  margin: 40px auto 60px;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 12px;
+  color: #7a8b94;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.breadcrumb a { color: #7a8b94; text-decoration: none; }
+.breadcrumb a:hover { color: #f4662c; }
+.breadcrumb .current { color: #2a2a2a; }
+
+/* Galeria */
+.product__gallery .gallery {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.gallery__thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 560px;
+  overflow: auto;
+  padding-right: 4px;
+}
+.thumb {
+  border: 2px solid transparent;
+  padding: 0;
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color .2s, transform .1s;
+}
+.thumb:focus { outline: none; border-color: #4a6b7c; }
+.thumb.is-active { border-color: #f4662c; }
+.thumb img {
+  display: block;
+  width: 84px; height: 84px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gallery__stage {
+  background: #f4f6f7;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  min-height: 520px;
+  overflow: hidden;
+}
+.gallery__stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Info */
+.product__title {
+  font-size: 28px;
+  margin: 6px 0 16px;
+  line-height: 1.2;
+}
+.product__price { display: grid; gap: 6px; margin-bottom: 18px; }
+.price__main { font-size: 24px; }
+.price__main strong { font-size: 28px; }
+.price__pix { color: #2d6a4f; font-weight: bold; }
+.price__installments { color: #5f6b72; }
+
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+  background: #e9f5ff;
+  color: #1f4b60;
+  width: fit-content;
+}
+.badge--shipping { background: #eaf9ef; color: #1b5e20; }
+
+/* Tamanhos */
+.product__sizes { margin: 18px 0 10px; }
+.sizes__label { font-size: 14px; margin-bottom: 8px; color: #343a40; }
+.size-grid {
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.size-grid input[type="radio"] { display: none; }
+.size-grid label.size {
+  min-width: 44px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1.6px solid #d7dde1;
+  display: grid; place-items: center;
+  font-weight: bold; font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: all .2s ease;
+  background: #fff;
+}
+.size-grid input[type="radio"]:checked + label.size {
+  border-color: #f4662c;
+  box-shadow: 0 0 0 3px rgba(244, 102, 44, .12) inset;
+}
+
+/* Quantidade + CTA */
+.product__actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin: 18px 0 26px;
+}
+.qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1.6px solid #d7dde1;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 44px;
+}
+.qty__btn {
+  width: 44px; height: 44px;
+  border: none; background: #f7f8f9;
+  font-size: 22px; cursor: pointer;
+}
+.qty input {
+  width: 60px; height: 44px; border: none;
+  text-align: center; font-size: 16px;
+  background: #fff;
+}
+.qty input:focus { outline: none; }
+
+.btn {
+  padding: 14px 28px;
+  border: none; border-radius: 14px;
+  font-weight: 800; letter-spacing: .4px;
+  cursor: pointer; transition: transform .05s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn--buy {
+  background: #111; color: #fff;
+  min-width: 260px;
+}
+.btn--buy:hover { filter: brightness(1.05); }
+
+/* Descrição */
+.product__desc h2 { font-size: 18px; margin: 10px 0 8px; }
+.product__desc p { color: #333; }
+.product__desc ul { padding-left: 18px; }
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  main.product {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .gallery__stage { min-height: 420px; }
+}
+
+ .footer {
+    background-color: #e5e8ea;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 20px 50px;
+    line-height: 1.5;
+    margin: 0;
+
+  }
+
+  /* ===== Dropdown simples (sem JS) ===== */
+.main-nav { display: flex; gap: 30px; align-items: center; position: relative; }
+
+/* container do dropdown */
+.dropdown { position: relative; }
+
+/* painel escondido por padrão */
+.dropdown__panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -6px;
+  width: 260px;
+  background: #fff;
+  color: #111;
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.18);
+  padding: 10px;
+  z-index: 1000;
+
+  /* estado fechado */
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+/* abre no hover e quando o link recebe foco (click/tab) */
+.dropdown:hover .dropdown__panel,
+.dropdown:focus-within .dropdown__panel {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* setinha no topo do painel */
+.dropdown__panel::before {
+  content: "";
+  position: absolute;
+  top: -8px; left: 20px;
+  width: 16px; height: 16px;
+  background: #fff;
+  transform: rotate(45deg);
+  box-shadow: -3px -3px 6px rgba(0,0,0,.04);
+}
+
+/* links dentro do painel (os "quadrados") */
+.panel-link {
+  display: block;
+  background: #f7f9fb;
+  border: 1px solid #e3e8ee;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 8px 4px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+  transition: background .15s, border-color .15s, transform .05s;
+}
+.panel-link:hover {
+  background: #eef3f7;
+  border-color: #d7dde1;
+  transform: translateY(-1px);
+}
+
+/* deixa o "PRODUTOS" com cara de link/btn */
+.dropdown__toggle { cursor: pointer; }
+
+/* opcional: destaca o item quando painel aberto */
+.dropdown:hover > .dropdown__toggle,
+.dropdown:focus-within > .dropdown__toggle {
+  color: #f4662c;
+}
+
+/* mobile: painel ocupa a largura do header */
+@media (max-width: 780px) {
+  .dropdown__panel {
+    left: -40px; right: -40px; width: auto;
+    border-radius: 0 0 12px 12px;
+  }
+  .dropdown__panel::before { left: 54px; }
+}

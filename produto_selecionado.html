@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OffSide - Produto</title>
+  <link rel="stylesheet" href="produto.css"/>
+  <!-- Fade suave na troca da imagem (opcional) -->
+  <style>
+    .gallery__stage img.fade-in { animation: fade .18s ease; }
+    @keyframes fade { from { opacity:.25; transform:scale(.995);} to { opacity:1; transform:none; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="home_img/logo2.png" id="img_logo" alt="OffSide"></a>
+  </div>
+
+  <nav class="main-nav">
+    <!-- PRODUTOS: abre painel só com CSS -->
+    <div class="dropdown">
+      <!-- anchor sem href para não navegar; tabindex permite foco/click -->
+      <a class="nav-link dropdown__toggle" tabindex="0" role="button">PRODUTOS</a>
+
+      <div class="dropdown__panel" aria-label="Atalhos de produtos">
+        <a class="panel-link" href="syna.html">Syna World</a>
+        <a class="panel-link" href="corteiz.html">Corteiz</a>
+        <a class="panel-link" href="tech.html">Nike Tech</a>
+        <a class="panel-link" href="todos.html">Ver Todos</a>
+      </div>
+    </div>
+
+    <!-- demais links -->
+    <a class="nav-link" href="quem.html">QUEM SOMOS</a>
+    <a class="nav-link" href="contato.html">CONTATO</a>
+    <a class="nav-link" href="cadastro.html">CADASTRO</a>
+    <a class="nav-link" href="carrinho.html">CARRINHO</a>
+  </nav>
+
+  <form class="search-bar" action="#" method="get">
+    <input type="text" name="search" placeholder="Pesquisar...">
+  </form>
+</header>
+
+<main class="product">
+  <div class="product__gallery">
+    <div class="gallery">
+      <div class="gallery__thumbs" aria-label="Miniaturas" role="tablist">
+        <!-- Miniaturas (data-full usa o mesmo caminho da imagem grande) -->
+        <button class="thumb is-active" data-full="produtos_img/tech_blue.png" aria-label="Imagem 1" role="tab" aria-selected="true">
+          <img src="produtos_img/tech_blue.png" alt="Miniatura 1">
+        </button>
+        <button class="thumb" data-full="produtos_img/homi_de_tech.png" aria-label="Imagem 2" role="tab" aria-selected="false">
+          <img src="produtos_img/homi_de_tech.png" alt="Miniatura 2">
+        </button>
+        <button class="thumb" data-full="produtos_img/tech_upclose.png" aria-label="Imagem 3" role="tab" aria-selected="false">
+          <img src="produtos_img/tech_upclose.png" alt="Miniatura 3">
+        </button>
+        <button class="thumb" data-full="produtos_img/tech_open.png" aria-label="Imagem 4" role="tab" aria-selected="false">
+          <img src="produtos_img/tech_open.png" alt="Miniatura 4">
+        </button>
+      </div>
+
+      <div class="gallery__stage">
+        <img id="stageImg" src="produtos_img/tech_blue.png" alt="Produto selecionado">
+      </div>
+    </div>
+  </div>
+
+  <div class="product__info">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Início</a> <span>›</span>
+      <a href="tech.html">Tech Fleece</a> <span>›</span>
+      <span class="current">Tech Fleece Nike “Blue”</span>
+    </nav>
+
+    <h1 class="product__title">Tech Fleece Nike “Blue”</h1>
+
+    <div class="product__price">
+      <div class="price__main">R$ <strong>394,00</strong></div>
+      <div class="price__pix">R$ 374,30 com Pix</div>
+      <div class="price__installments">12x de R$ 41,46</div>
+      <div class="badge badge--shipping">Frete grátis</div>
+    </div>
+
+    <div class="product__sizes">
+      <div class="sizes__label">Tamanho: <span id="sizeLabel">P</span></div>
+      <div class="size-grid" role="radiogroup" aria-label="Escolher tamanho">
+        <input type="radio" name="size" id="szP" value="P" checked>
+        <label for="szP" class="size">P</label>
+
+        <input type="radio" name="size" id="szM" value="M">
+        <label for="szM" class="size">M</label>
+
+        <input type="radio" name="size" id="szG" value="G">
+        <label for="szG" class="size">G</label>
+
+        <input type="radio" name="size" id="szGG" value="GG">
+        <label for="szGG" class="size">GG</label>
+
+        <input type="radio" name="size" id="szXG" value="XG">
+        <label for="szXG" class="size">XG</label>
+      </div>
+    </div>
+
+    <div class="product__actions">
+      <div class="qty">
+        <button class="qty__btn" data-act="minus" aria-label="Diminuir">−</button>
+        <input type="number" id="qty" value="1" min="1" step="1" inputmode="numeric" pattern="[0-9]*" aria-label="Quantidade">
+        <button class="qty__btn" data-act="plus" aria-label="Aumentar">+</button>
+      </div>
+      <button class="btn btn--buy">COMPRAR</button>
+    </div>
+
+    <section class="product__desc">
+      <h2>Descrição</h2>
+      <p>Este é um produto importado e conta com prazo estimado de 15 a 20 dias para chegar ao endereço do cliente.</p>
+      <ul>
+        <li>Fotos reais do produto</li>
+        <li>Modelagem premium</li>
+        <li>Garantia de satisfação</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>COPYRIGHT THEO ANDRADE - OFFSIDE <br>2025. TODOS OS DIREITOS RESERVADOS.</p>
+</footer>
+
+<script>
+  // Troca da imagem principal pelas miniaturas
+  const stage = document.getElementById('stageImg');
+  const thumbs = Array.from(document.querySelectorAll('.thumb'));
+
+  function setStage(src, clickedBtn){
+    if (!src) return;
+    const pre = new Image();
+    pre.onload = () => {
+      stage.classList.remove('fade-in'); void stage.offsetWidth; // reinicia a animação
+      stage.src = src;
+      stage.classList.add('fade-in');
+    };
+    pre.src = src;
+
+    thumbs.forEach(t => { 
+      t.classList.remove('is-active'); 
+      t.setAttribute('aria-selected','false'); 
+    });
+    if (clickedBtn){
+      clickedBtn.classList.add('is-active');
+      clickedBtn.setAttribute('aria-selected','true');
+    }
+  }
+
+  thumbs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.dataset.full || btn.querySelector('img')?.getAttribute('src');
+      setStage(src, btn);
+    });
+  });
+
+  // Seleção de tamanho (atualiza label)
+  const sizeLabel = document.getElementById('sizeLabel');
+  document.querySelectorAll('input[name="size"]').forEach(r => {
+    r.addEventListener('change', () => (sizeLabel.textContent = r.value));
+  });
+
+  // Quantidade +/-
+  const qtyInput = document.getElementById('qty');
+  document.querySelectorAll('.qty__btn').forEach(b => {
+    b.addEventListener('click', () => {
+      const act = b.getAttribute('data-act');
+      const current = parseInt(qtyInput.value || '1', 10);
+      if (act === 'plus') qtyInput.value = current + 1;
+      if (act === 'minus') qtyInput.value = Math.max(1, current - 1);
+    });
+  });
+
+  // Sincroniza estado inicial
+  const initial = document.querySelector('.thumb.is-active');
+  if (initial){
+    const src = initial.dataset.full || initial.querySelector('img')?.getAttribute('src');
+    setStage(src, initial);
+  }
+</script>
+</body>
+</html>

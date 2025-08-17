@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OffSide — Carrinho</title>
+  <link rel="stylesheet" href="carrinho.css">
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="home_img/logo2.png" id="img_logo" alt="OffSide"></a>
+  </div>
+
+  <nav class="main-nav">
+    <div class="dropdown">
+      <a class="nav-link dropdown__toggle" tabindex="0" role="button">PRODUTOS</a>
+      <div class="dropdown__panel" aria-label="Atalhos de produtos">
+        <a class="panel-link" href="syna.html">Syna World</a>
+        <a class="panel-link" href="corteiz.html">Corteiz</a>
+        <a class="panel-link" href="tech.html">Nike Tech</a>
+        <a class="panel-link" href="todos.html">Ver Todos</a>
+      </div>
+    </div>
+
+    <a class="nav-link" href="quem.html">QUEM SOMOS</a>
+    <a class="nav-link" href="contato.html">CONTATO</a>
+    <a class="nav-link" href="cadastro.html">CADASTRO</a>
+    <a class="nav-link" id="selecionado" href="carrinho.html">CARRINHO</a>
+  </nav>
+
+  <form class="search-bar" action="#" method="get">
+    <input type="text" name="search" placeholder="Pesquisar...">
+  </form>
+</header>
+
+<main class="cart">
+  <h1 class="cart__title">Seu carrinho</h1>
+
+  <div class="cart__grid">
+    <!-- Lista de itens -->
+    <section class="cart-list" aria-label="Itens do carrinho">
+      <!-- Item 1 -->
+      <article class="cart-item">
+        <a class="cart-item__thumb" href="produto_selecionado.html">
+          <img src="produtos_img/tech_blue.png" alt="Tech Fleece Nike “Blue”">
+        </a>
+
+        <div class="cart-item__info">
+          <a class="cart-item__name" href="produto_selecionado.html">Tech Fleece Nike “Blue”</a>
+          <div class="cart-item__meta">
+            <span>Tamanho: G</span>
+            <span>Cor: Blue</span>
+          </div>
+        </div>
+
+        <div class="cart-item__qty">
+          <label for="qty1">Qtd</label>
+          <input id="qty1" type="number" min="1" value="1" inputmode="numeric" pattern="[0-9]*">
+        </div>
+
+        <div class="cart-item__price">
+          <span class="unit">R$ 394,90</span>
+          <span class="subtotal">Subtotal: R$ 394,90</span>
+        </div>
+
+        <button class="cart-item__remove" type="button" aria-label="Remover item">×</button>
+      </article>
+
+      <!-- Item 2 -->
+      <article class="cart-item">
+        <a class="cart-item__thumb" href="produto_selecionado.html">
+          <img src="produtos_img/corteiz_brasil.png" alt="Corteiz America - Brasil">
+        </a>
+
+        <div class="cart-item__info">
+          <a class="cart-item__name" href="produto_selecionado.html">Corteiz America - Brasil</a>
+          <div class="cart-item__meta">
+            <span>Tamanho: M</span>
+            <span>Cor: Amarelo/Verde</span>
+          </div>
+        </div>
+
+        <div class="cart-item__qty">
+          <label for="qty2">Qtd</label>
+          <input id="qty2" type="number" min="1" value="1" inputmode="numeric" pattern="[0-9]*">
+        </div>
+
+        <div class="cart-item__price">
+          <span class="unit">R$ 799,90</span>
+          <span class="subtotal">Subtotal: R$ 799,90</span>
+        </div>
+
+        <button class="cart-item__remove" type="button" aria-label="Remover item">×</button>
+      </article>
+
+      <!-- Cupom -->
+      <div class="coupon">
+        <label for="cupom">Cupom de desconto</label>
+        <div class="coupon__row">
+          <input id="cupom" type="text" placeholder="DIGITE O CUPOM">
+          <button type="button" class="btn btn--apply">Aplicar</button>
+        </div>
+        <p class="coupon__hint">* O desconto será aplicado no resumo quando validado.</p>
+      </div>
+    </section>
+
+    <!-- Resumo -->
+    <aside class="summary" aria-label="Resumo do pedido">
+      <h2>Resumo</h2>
+
+      <div class="summary__row">
+        <span>Subtotal</span>
+        <span>R$ 1.194,80</span>
+      </div>
+
+      <div class="summary__row">
+        <span>Frete</span>
+        <span>Grátis</span>
+      </div>
+
+      <div class="summary__row summary__row--total">
+        <span>Total</span>
+        <span>R$ 1.194,80</span>
+      </div>
+
+      <a class="btn btn--primary" href="checkout.html">Finalizar compra</a>
+      <a class="btn btn--ghost" href="todos.html">Continuar comprando</a>
+
+      <div class="summary__safe">
+        Compra segura • Pix, cartão em até 12x
+      </div>
+    </aside>
+  </div>
+
+  <!-- Estado vazio (deixe escondido e mostre quando não houver itens) -->
+  <section class="cart-empty" hidden>
+    <p>Seu carrinho está vazio.</p>
+    <a class="btn btn--primary" href="todos.html">Ver produtos</a>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>COPYRIGHT THEO ANDRADE - OFFSIDE <br>2025. TODOS OS DIREITOS RESERVADOS.</p>
+</footer>
+</body>
+</html>

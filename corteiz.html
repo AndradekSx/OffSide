@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OffSide - Produtos</title>
+    <link rel="stylesheet" href="corteiz.css">
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="home_img/logo2.png" id="img_logo" alt="OffSide"></a>
+  </div>
+
+  <nav class="main-nav">
+    <!-- PRODUTOS: abre painel só com CSS -->
+    <div class="dropdown">
+      <!-- anchor sem href para não navegar; tabindex permite foco/click -->
+      <a class="nav-link dropdown__toggle" tabindex="0" role="button">PRODUTOS</a>
+
+      <div class="dropdown__panel" aria-label="Atalhos de produtos">
+        <a class="panel-link" href="syna.html">Syna World</a>
+        <a class="panel-link" href="corteiz.html">Corteiz</a>
+        <a class="panel-link" href="tech.html">Nike Tech</a>
+        <a class="panel-link" href="todos.html">Ver Todos</a>
+      </div>
+    </div>
+
+    <!-- demais links -->
+    <a class="nav-link" href="quem.html">QUEM SOMOS</a>
+    <a class="nav-link" href="contato.html">CONTATO</a>
+    <a class="nav-link" href="cadastro.html">CADASTRO</a>
+    <a class="nav-link" href="carrinho.html">CARRINHO</a>
+  </nav>
+
+  <form class="search-bar" action="#" method="get">
+    <input type="text" name="search" placeholder="Pesquisar...">
+  </form>
+</header>
+
+<main>
+    <h1 class="titulo-produtos">CORTEIZ</h1>
+    <div class="produtos-grid">
+        
+        <div class="produto">
+            <a href="produto_selecionado.html">
+                <img src="produtos_img/corteiz_brasil.png" id="produto_1">
+            </a>
+            <p class="nome-produto">Corteiz America - Brasil</p>
+            <p class="preco-produto">R$ 799,90</p>
+        </div>
+
+        <div class="produto">
+            <a href="produto_selecionado.html">
+                <img src="produtos_img/corteiz-bermuda-16uk1syjjd-removebg-preview.png" id="produto_2">
+            </a>
+            <p class="nome-produto">Jorts Corteiz Alcatraz</p>
+            <p class="preco-produto">R$ 459,90</p>
+        </div>
+
+        <div class="produto">
+            <a href="produto_selecionado.html">
+                <img src="produtos_img/camo corteiz.webp" id="produto_3">
+            </a>
+            <p class="nome-produto">Jaqueta Island Puff corteiz</p>
+            <p class="preco-produto">R$ 409,90</p>
+        </div>
+
+    </div>
+</main>
+
+<footer class="footer">
+    <p>COPYRIGHT THEO ANDRADE - OFFSIDE <br>2025. TODOS OS DIREITOS RESERVADOS.</p>
+</footer>
+</body>
+</html>
